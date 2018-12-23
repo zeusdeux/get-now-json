@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "lib": ["es2018"],
+    "module": "CommonJS",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "project": "./",
+    "outDir": "./built",
+
+    "strict": true,
+    "noEmitOnError": true,
+    "noErrorTruncation": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+
+    "composite": true,
+    "declaration": true,
+    "declarationMap": true
+  },
+  "include": ["api/**/*"],
+  "exclude": ["node_modules", "built/**", "**/__tests__/*"]
+}

@@ -1,0 +1,82 @@
+{
+  "scripts": {
+    "build": "rimraf built && tsc",
+    "watch": "tsc --watch",
+    "lint": "tslint -p ./tsconfig.json",
+    "test": "jest",
+    "prettier": "prettier --config ./.prettierrc --write \"api/**/*.{ts,json,md}\""
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.10",
+    "@types/node": "^10.12.18",
+    "husky": "^1.2.1",
+    "jest": "^23.6.0",
+    "lint-staged": "^8.1.0",
+    "prettier": "1.15.3",
+    "rimraf": "^2.6.2",
+    "ts-jest": "^23.10.5",
+    "tslint": "^5.12.0",
+    "tslint-config-prettier": "^1.17.0",
+    "typescript": "^3.2.2"
+  },
+  "dependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>/api/"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "json"
+    ],
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "tsconfig.json"
+      }
+    },
+    "testMatch": [
+      "**/__tests__/**/*.ts"
+    ]
+  },
+  "lint-staged": {
+    "*.ts": [
+      "prettier --write",
+      "tslint --fix",
+      "npm t",
+      "git add"
+    ],
+    "*.{json,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "name": "get-now-json",
+  "description": "An endpoint that returns a now.json file based on passed query params",
+  "version": "1.0.0",
+  "main": "index.js",
+  "keywords": [
+    "now",
+    "zeit",
+    "now.json",
+    "serverless",
+    "lambda"
+  ],
+  "author": "Mudit Ameta <zeusdeux@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zeusdeux/get-now-json.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zeusdeux/get-now-json/issues"
+  },
+  "homepage": "https://github.com/zeusdeux/get-now-json#readme"
+}
