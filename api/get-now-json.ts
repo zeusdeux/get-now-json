@@ -78,7 +78,15 @@ export function buildConfig(query: ParsedUrlQuery) {
         case 'routes':
         case 'regions':
           {
-            const parsed = JSON.parse(value)
+            const parsed = Array.isArray(value)
+              ? value.map(v => {
+                  try {
+                    return JSON.parse(v)
+                  } catch (_) {
+                    return v
+                  }
+                })
+              : JSON.parse(value)
 
             if (Array.isArray(parsed)) {
               acc[key] = parsed

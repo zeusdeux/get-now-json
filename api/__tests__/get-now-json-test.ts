@@ -37,6 +37,11 @@ describe('#buildConfig', () => {
           [key]: '["a"]'
         })
       ).toEqual({ version: 2, [key]: ['a'] })
+      expect(
+        buildConfig({
+          [key]: ['a', 'b']
+        })
+      ).toEqual({ version: 2, [key]: ['a', 'b'] })
     })
   })
 })
