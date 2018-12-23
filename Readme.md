@@ -13,6 +13,10 @@ Any [supported now.json config property](https://zeit.co/docs/v2/deployments/con
 
 The `version` property is always set to `2` by default and can be overriden by a `version` query parameter.
 
+### Important note
+
+This project does **NO** validation of the json it outputs. That is delegated to the `now` CLI and occurs when it tries to consume the generated json config in the context of _your_ project.
+
 ### Examples
 
 ```bash
