@@ -23,7 +23,10 @@ This project does **NO** validation of the json it outputs. That is delegated to
 curl "https://now-json.zdx.cat" # returns { "version": 2 }
 curl "https://now-json.zdx.cat?name=my-project" # returns { "version": 2, "name": "my-project"}
 
-# these two return the same object with a builds ARRAY
-curl 'https://now-json.zdx.cat?name=my-project&builds={"src": "a.js", "use": "@now/node"}&builds={"src": "index.html", "use": "@now/static"}'
-curl 'https://now-json.zdx.cat?name=my-project&builds=[{"src": "a.js", "use": "@now/node"},{"src": "index.html", "use": "@now/static"}]'
+# returns the builds object wrapped in an array as expected by `now` cli
+curl 'https://now-json.zdx.cat?name=my-project&builds=\{"src": "a.js", "use": "@now/node"\}'
+
+# these two return the same object with a builds array
+curl 'https://now-json.zdx.cat?name=my-project&builds=\{"src": "a.js", "use": "@now/node"\}&builds=\{"src": "index.html", "use": "@now/static"\}'
+curl 'https://now-json.zdx.cat?name=my-project&builds=\[\{"src": "a.js", "use": "@now/node"\},\{"src": "index.html", "use": "@now/static"\}\]'
 ```
