@@ -19,7 +19,7 @@ This project does **NO** validation of the json it outputs. That is delegated to
 
 ### Examples
 
-```bash
+```curl
 curl "https://now-json.zdx.cat" # returns { "version": 2 }
 curl "https://now-json.zdx.cat?name=my-project" # returns { "version": 2, "name": "my-project"}
 
@@ -30,3 +30,5 @@ curl 'https://now-json.zdx.cat?name=my-project&builds=\{"src": "a.js", "use": "@
 curl 'https://now-json.zdx.cat?name=my-project&builds=\{"src": "a.js", "use": "@now/node"\}&builds=\{"src": "index.html", "use": "@now/static"\}'
 curl 'https://now-json.zdx.cat?name=my-project&builds=\[\{"src": "a.js", "use": "@now/node"\},\{"src": "index.html", "use": "@now/static"\}\]'
 ```
+
+or if you want to try it in the browser, [click me!](https://now-json.zdx.cat/?name=my-project&builds={%22src%22:%20%22a.js%22,%20%22use%22:%20%22@now/node%22}&builds={%22src%22:%20%22index.html%22,%20%22use%22:%20%22@now/static%22})
