@@ -107,6 +107,7 @@ export function buildConfig(query: ParsedUrlQuery) {
       return acc
     },
     {
+      public: false,
       version: 2
     }
   )
